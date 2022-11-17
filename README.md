@@ -34,8 +34,8 @@ Open the starter project in Android Studio
 
 6. Create a new Welcome screen destination that includes:
 
-   * A new layout
-   * At least 2 textviews
+   * A new layout - DONE
+   * At least 2 textviews - DONE
    * A navigation button with actions to navigate to the instructions screen
 
 7. Create a new Instruction destination that includes:
