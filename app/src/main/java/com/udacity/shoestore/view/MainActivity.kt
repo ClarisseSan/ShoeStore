@@ -1,9 +1,10 @@
-package com.udacity.shoestore
+package com.udacity.shoestore.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import com.udacity.shoestore.R
 import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {

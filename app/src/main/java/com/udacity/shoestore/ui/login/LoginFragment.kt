@@ -50,6 +50,7 @@ class LoginFragment : Fragment() {
         val passwordEditText = binding.passwordText
         val loginButton = binding.loginButton
         val loadingProgressBar = binding.loading
+        val registerButton = binding.registerButton
 
         loginViewModel.loginFormState.observe(viewLifecycleOwner,
             Observer { loginFormState ->
@@ -57,6 +58,10 @@ class LoginFragment : Fragment() {
                     return@Observer
                 }
                 loginButton.isEnabled = loginFormState.isDataValid
+                loginFormState.usernameError?.let {
+                    usernameEditText.error = getString(it)
+                }
+                registerButton.isEnabled = loginFormState.isDataValid
                 loginFormState.usernameError?.let {
                     usernameEditText.error = getString(it)
                 }
@@ -106,6 +111,15 @@ class LoginFragment : Fragment() {
         }
 
         loginButton.setOnClickListener {
+            loadingProgressBar.visibility = View.VISIBLE
+            loginViewModel.login(
+                usernameEditText.text.toString(),
+                passwordEditText.text.toString()
+            )
+            view.findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
+        }
+
+        registerButton.setOnClickListener {
             loadingProgressBar.visibility = View.VISIBLE
             loginViewModel.login(
                 usernameEditText.text.toString(),
