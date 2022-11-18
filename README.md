@@ -65,7 +65,7 @@ Open the starter project in Android Studio
       * Company - DONE
       * Shoe Size - DONE
       * Description - DONE
-    * A Cancel button with an action to navigate back to the shoe list screen - PENDING
+    * A Cancel button with an action to navigate back to the shoe list screen - DONE
     * A Save button with an action to navigate back to the shoe list screen and add a new Shoe to the Shoe View Model - PENDING
 
 12. Make sure you can’t go back to onboarding screens - DONE
