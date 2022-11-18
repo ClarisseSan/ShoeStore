@@ -1,4 +1,4 @@
-package com.udacity.shoestore
+package com.udacity.shoestore.view
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,7 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.navigation.findNavController
+import com.udacity.shoestore.R
+import com.udacity.shoestore.viewmodel.ShoeDetailViewModel
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
 
 class ShoeDetailFragment : Fragment() {
@@ -36,6 +39,10 @@ class ShoeDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         var cancelButton : Button = binding.cancelButton
         var saveButton : Button = binding.saveButton
+        var shoeNameText : TextView = binding.shoenameText
+        var company : TextView = binding.companyText
+        var shoeSize : TextView = binding.shoesizeText
+        var description : TextView = binding.descriptionText
 
         saveButton.setOnClickListener {
             //TODO save shoe in LiveData
