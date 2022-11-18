@@ -50,23 +50,23 @@ Open the starter project in Android Studio
 
 9. Create a new Shoe List destination that includes:
 
-   * A new layout
-   * A ScrollView
-   * A LinearLayout for Shoe Items
+   * A new layout - DONE
+   * A ScrollView - DONE
+   * A LinearLayout for Shoe Items - DONE
    * A FloatingActionButton with an action to navigate to the shoe detail screen
 
 10. In MainActivity, setup the nav controller with the toolbar and an AppBarConfiguration.
 
 11. Create a new Shoe Detail destination that includes:
 
-    * A new layout
+    * A new layout - DONE
     * A TextView label and EditView for the
-      * Shoe Name
-      * Company
-      * Shoe Size
-      * Description
-    * A Cancel button with an action to navigate back to the shoe list screen
-    * A Save button with an action to navigate back to the shoe list screen and add a new Shoe to the Shoe View Model
+      * Shoe Name - DONE
+      * Company - DONE
+      * Shoe Size - DONE
+      * Description - DONE
+    * A Cancel button with an action to navigate back to the shoe list screen - PENDING
+    * A Save button with an action to navigate back to the shoe list screen and add a new Shoe to the Shoe View Model - PENDING
 
 12. Make sure you can’t go back to onboarding screens
 

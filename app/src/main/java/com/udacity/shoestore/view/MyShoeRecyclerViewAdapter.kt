@@ -1,9 +1,13 @@
 package com.udacity.shoestore.view
 
+import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
+import androidx.navigation.findNavController
+import com.udacity.shoestore.R
 
 import com.udacity.shoestore.placeholder.PlaceholderContent.PlaceholderItem
 import com.udacity.shoestore.databinding.FragmentShoeObjectBinding
@@ -32,6 +36,7 @@ class MyShoeRecyclerViewAdapter(
         val item = values[position]
         holder.idView.text = item.id
         holder.contentView.text = item.content
+
     }
 
     override fun getItemCount(): Int = values.size
@@ -40,10 +45,18 @@ class MyShoeRecyclerViewAdapter(
         RecyclerView.ViewHolder(binding.root) {
         val idView: TextView = binding.itemNumber
         val contentView: TextView = binding.content
+        val itemView = binding.root
+
+        init {
+            itemView.setOnClickListener {
+                itemView.findNavController().navigate(R.id.action_shoeList_to_shoeDetailFragment)
+            }
+        }
 
         override fun toString(): String {
             return super.toString() + " '" + contentView.text + "'"
         }
+
     }
 
 }

@@ -14,7 +14,7 @@ import com.udacity.shoestore.placeholder.PlaceholderContent
 /**
  * A fragment representing a list of Items.
  */
-class ShoeList : Fragment() {
+class ShoeListFragment : Fragment() {
 
     private var columnCount = 1
 
@@ -53,7 +53,7 @@ class ShoeList : Fragment() {
         // TODO: Customize parameter initialization
         @JvmStatic
         fun newInstance(columnCount: Int) =
-            ShoeList().apply {
+            ShoeListFragment().apply {
                 arguments = Bundle().apply {
                     putInt(ARG_COLUMN_COUNT, columnCount)
                 }
