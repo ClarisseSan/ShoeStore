@@ -1,21 +1,24 @@
 package com.udacity.shoestore.view
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.udacity.shoestore.R
-import com.udacity.shoestore.viewmodel.ShoeDetailViewModel
+import com.udacity.shoestore.data.model.Shoe
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
+import com.udacity.shoestore.viewmodel.ShoeViewModel
 
 class ShoeDetailFragment : Fragment() {
 
-    private var _binding : FragmentShoeDetailBinding? = null
+    private var _binding: FragmentShoeDetailBinding? = null
+
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -25,27 +28,41 @@ class ShoeDetailFragment : Fragment() {
         fun newInstance() = ShoeDetailFragment()
     }
 
-    private lateinit var viewModel: ShoeDetailViewModel
+    private lateinit var viewModel: ShoeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding =  FragmentShoeDetailBinding.inflate(inflater, container, false)
+
+        // Inflate view and obtain an instance of the binding class
+        _binding = FragmentShoeDetailBinding.inflate(inflater, container, false)
+
+        // Get the viewmodel
+        viewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
+
+        // Set the viewmodel for databinding - this allows the bound layout access to all of the data in the VieWModel
+        binding.shoeViewModel = viewModel
+
+        // Specify the current activity as the lifecycle owner of the binding. This is used so that the binding can observe LiveData updates
+        binding.setLifecycleOwner(viewLifecycleOwner)
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var cancelButton : Button = binding.cancelButton
-        var saveButton : Button = binding.saveButton
-        var shoeNameText : TextView = binding.shoenameText
-        var company : TextView = binding.companyText
-        var shoeSize : TextView = binding.shoesizeText
-        var description : TextView = binding.descriptionText
+        var cancelButton: Button = binding.cancelButton
+        var saveButton: Button = binding.saveButton
+        var shoeNameText: TextView = binding.shoenameText
+        var company: TextView = binding.companyText
+        var shoeSize: TextView = binding.shoesizeText
+        var description: TextView = binding.descriptionText
 
         saveButton.setOnClickListener {
             //TODO save shoe in LiveData
+            viewModel.saveShoe(Shoe(shoeNameText.text.toString(), 38.5, company.text.toString(), description.text.toString()))
+
             view.findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeList)
         }
 
@@ -54,10 +71,5 @@ class ShoeDetailFragment : Fragment() {
         }
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ShoeDetailViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
 
 }
