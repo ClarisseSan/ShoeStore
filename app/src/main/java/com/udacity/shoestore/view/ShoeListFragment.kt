@@ -1,15 +1,13 @@
 package com.udacity.shoestore.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.udacity.shoestore.R
-import com.udacity.shoestore.placeholder.PlaceholderContent
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.udacity.shoestore.databinding.FragmentShoeListBinding
+import com.udacity.shoestore.viewmodel.ShoeViewModel
 
 /**
  * A fragment representing a list of Items.
@@ -17,6 +15,8 @@ import com.udacity.shoestore.placeholder.PlaceholderContent
 class ShoeListFragment : Fragment() {
 
     private var columnCount = 1
+
+    private lateinit var viewModel: ShoeViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,19 +30,28 @@ class ShoeListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_shoe_list, container, false)
+
+        // Inflate view and obtain an instance of the binding class
+        val binding = FragmentShoeListBinding.inflate(inflater, container, false)
+
+        //get the view model
+        viewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
+
+        // Set the viewmodel for databinding - this allows the bound layout access to all of the data in the VieWModel
+        binding.shoeListViewModel = viewModel
+
+        // Specify the current activity as the lifecycle owner of the binding. This is used so that the binding can observe LiveData updates
+        binding.setLifecycleOwner(viewLifecycleOwner)
 
         // Set the adapter
-        if (view is RecyclerView) {
-            with(view) {
-                layoutManager = when {
-                    columnCount <= 1 -> LinearLayoutManager(context)
-                    else -> GridLayoutManager(context, columnCount)
-                }
-                adapter = MyShoeRecyclerViewAdapter(PlaceholderContent.ITEMS)
-            }
-        }
-        return view
+        val adapter = ShoeRecyclerViewAdapter(viewModel.shoeList)
+        binding.recyclerView.adapter = adapter
+
+        //observe
+
+
+
+        return binding.root
     }
 
     companion object {

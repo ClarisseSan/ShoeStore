@@ -70,7 +70,7 @@ Open the starter project in Android Studio
 
 12. Make sure you can’t go back to onboarding screens - DONE
 
-13. In the Shoe List screen: ---------------- TODO
+13. In the Shoe List screen: ---------------- TODO 
 
     * Use an Activity level ViewModel to hold a list of Shoes (use by activityViewModels)
     * Observe the shoes variable from the ViewModel
