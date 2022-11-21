@@ -33,33 +33,49 @@ class ShoeViewModel : ViewModel() {
     private val shoe_3: Shoe = Shoe("Classic", 33.5, "New Balance", "Black high heeled shoes")
     private val shoe_4: Shoe = Shoe("Gizeh Eva", 41.5, "Birkenstock", "Pink with white heels shoes")
     private val shoe_5: Shoe = Shoe("Gucci Gigi", 48.0, "Gucci", "Black high heeled shoes")
-    private val shoe_6: Shoe = Shoe("Vara Pump", 39.5, "Ferregamo", "Hig pump heels")
-    private val shoe_7: Shoe = Shoe("Triple S", 40.5, "Balenciaga", "In white and yellow heels")
-    private val shoe_8: Shoe = Shoe("D-Connect", 42.5, "Adidas", "White mesh women sneaker")
-    private val shoe_9: Shoe = Shoe("Dior Caro", 36.5, "Dior", "Women loafers in pink")
-    private val shoe_10: Shoe =
-        Shoe("Burberry Pump", 39.0, "Burberry", "Vintage check women's shoes")
 
-    var shoeList = MutableLiveData<MutableList<Shoe>>()
-    private lateinit var list: MutableList<Shoe>
+    private var _shoeList = MutableLiveData<MutableList<Shoe>>()
+    val shoeList: LiveData<MutableList<Shoe>>
+        get() = _shoeList
+
+    // save state of the Shoe
+    private var _saveState = MutableLiveData<Boolean>()
+    val saveState: LiveData<Boolean>
+        get() = _saveState
 
     init {
-        addShoe()
+        getShoesList()
+        _saveState.value = false
 
-    }
-
-    fun addShoe() {
-        list = mutableListOf(
-            shoe_1, shoe_2, shoe_3, shoe_4, shoe_5, shoe_6, shoe_7, shoe_8, shoe_9, shoe_10,
-        )
-        shoeList.value = list
-
-        for (shoe in list) {
-            Log.i("ShowViewModel", shoe.name)
+        for (shoe in shoeList.value!!) {
+            Log.i("init", shoe.name)
         }
     }
 
-    fun saveShoe(shoe: Shoe) {
-        list.add(shoe)
+    private fun getShoesList(): MutableLiveData<MutableList<Shoe>> {
+        _shoeList.value = mutableListOf()
+        saveShoe(shoe_1)
+        saveShoe(shoe_2)
+        saveShoe(shoe_3)
+        saveShoe(shoe_4)
+        saveShoe(shoe_5)
+        return _shoeList
     }
+
+    fun saveShoe(shoe: Shoe) {
+        //TODO: save shoe
+        _shoeList.value?.add(shoe)
+
+        for (shoe in shoeList.value!!) {
+            Log.i("saveShoe", shoe.name)
+        }
+        _saveState.value = true
+
+    }
+
+    fun onEventSaveComplete() {
+        _saveState.value = false
+    }
+
+
 }

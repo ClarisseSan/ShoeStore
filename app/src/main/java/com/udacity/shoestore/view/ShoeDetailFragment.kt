@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -41,6 +42,7 @@ class ShoeDetailFragment : Fragment() {
         // Get the viewmodel
         viewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
 
+
         // Set the viewmodel for databinding - this allows the bound layout access to all of the data in the VieWModel
         binding.shoeViewModel = viewModel
 
@@ -49,6 +51,7 @@ class ShoeDetailFragment : Fragment() {
 
         return binding.root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -61,10 +64,20 @@ class ShoeDetailFragment : Fragment() {
 
         saveButton.setOnClickListener {
             //TODO save shoe in LiveData
-            viewModel.saveShoe(Shoe(shoeNameText.text.toString(), 38.5, company.text.toString(), description.text.toString()))
+            viewModel.saveShoe(
+                Shoe(
+                    shoeNameText.text.toString(),
+                    38.5,
+                    company.text.toString(),
+                    description.text.toString()
+                )
+            )
 
+            //go back to Shoe List
             view.findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeList)
         }
+
+
 
         cancelButton.setOnClickListener {
             view.findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeList)
