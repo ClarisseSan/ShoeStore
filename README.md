@@ -44,7 +44,7 @@ Open the starter project in Android Studio
    * At least 2 textviews - DONE
    * A navigation button with actions to navigate to the shoe list screen - DONE
 
-8. Create a class that extends ViewModel ---------------- TODO
+8. Create a class that extends ViewModel 
 
    *  Use a LiveData field that returns the list of shoes - DONE
 
@@ -55,7 +55,7 @@ Open the starter project in Android Studio
    * A LinearLayout for Shoe Items - DONE
    * A FloatingActionButton with an action to navigate to the shoe detail screen - DONE
 
-10. In MainActivity, setup the nav controller with the toolbar and an AppBarConfiguration.
+10. In MainActivity, setup the nav controller with the toolbar and an AppBarConfiguration. ---------------- TODO
 
 11. Create a new Shoe Detail destination that includes:
 
@@ -66,11 +66,11 @@ Open the starter project in Android Studio
       * Shoe Size - DONE
       * Description - DONE
     * A Cancel button with an action to navigate back to the shoe list screen - DONE
-    * A Save button with an action to navigate back to the shoe list screen and add a new Shoe to the Shoe View Model - PENDING
+    * A Save button with an action to navigate back to the shoe list screen and add a new Shoe to the Shoe View Model - DONE
 
 12. Make sure you can’t go back to onboarding screens - DONE
 
-13. In the Shoe List screen: ---------------- TODO 
+13. In the Shoe List screen:
 
     * Use an Activity level ViewModel to hold a list of Shoes (use by activityViewModels) - DONE
     * Observe the shoes variable from the ViewModel - DONE
