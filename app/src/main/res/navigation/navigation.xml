@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
+    android:label="SHOE LIST "
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.udacity.shoestore.ui.login.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        android:label="@string/login_cap"
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment" />
@@ -16,8 +17,8 @@
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.udacity.shoestore.view.WelcomeFragment"
-        android:label="fragment_welcome"
-        tools:layout="@layout/fragment_welcome" >
+        android:label="@string/welcome_cap"
+        tools:layout="@layout/fragment_welcome">
         <action
             android:id="@+id/action_welcomeFragment_to_instructionFragment2"
             app:destination="@id/instructionFragment" />
@@ -25,8 +26,8 @@
     <fragment
         android:id="@+id/instructionFragment"
         android:name="com.udacity.shoestore.view.InstructionFragment"
-        android:label="fragment_instruction"
-        tools:layout="@layout/fragment_instruction" >
+        android:label="INSTRUCTION"
+        tools:layout="@layout/fragment_instruction">
         <action
             android:id="@+id/action_instructionFragment_to_shoeList"
             app:destination="@id/shoeListFragment"
@@ -35,8 +36,8 @@
     <fragment
         android:id="@+id/shoeListFragment"
         android:name="com.udacity.shoestore.view.ShoeListFragment"
-        android:label="fragment_shoe_list"
-        tools:layout="@layout/fragment_shoe_list_simple" >
+        android:label="@string/shoe_list_cap"
+        tools:layout="@layout/fragment_shoe_list_simple">
         <action
             android:id="@+id/action_shoeList_to_shoeDetailFragment"
             app:destination="@id/shoeDetailFragment"
@@ -50,8 +51,8 @@
     <fragment
         android:id="@+id/shoeDetailFragment"
         android:name="com.udacity.shoestore.view.ShoeDetailFragment"
-        android:label="fragment_shoe_detail"
-        tools:layout="@layout/fragment_shoe_detail" >
+        android:label="@string/shoe_detail_cap"
+        tools:layout="@layout/fragment_shoe_detail">
         <action
             android:id="@+id/action_shoeDetailFragment_to_shoeList"
             app:destination="@id/shoeListFragment"

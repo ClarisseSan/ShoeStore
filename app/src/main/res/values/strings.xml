@@ -38,4 +38,8 @@
     <string name="go_to_list">Go to shoe list</string>
     <string name="add_shoe">Add Shoe</string>
     <string name="go_to_instruction">Go to instructions</string>
+    <string name="shoe_list_cap">SHOE LIST</string>
+    <string name="login_cap">LOGIN</string>
+    <string name="welcome_cap">WELCOME</string>
+    <string name="shoe_detail_cap">SHOE DETAIL</string>
 </resources>

@@ -29,17 +29,6 @@ class MainActivity : AppCompatActivity() {
         //Link navcontroller with action bar
         NavigationUI.setupActionBarWithNavController(this, navController)
 
-        //Change actionbar title
-        navController.addOnDestinationChangedListener { nc: NavController, nd: NavDestination, bundle: Bundle? ->
-            supportActionBar?.title =  when(nd.id){
-                R.id.loginFragment -> "Login"
-                R.id.welcomeFragment -> "Welcome"
-                R.id.instructionFragment -> "Instructions"
-                R.id.shoeDetailFragment -> "Add Shoe"
-                R.id.shoeListFragment -> "Shoe List"
-                else -> {""}
-            }
-        }
 
     }
 
