@@ -63,7 +63,8 @@ class ShoeViewModel : ViewModel() {
     }
 
     fun saveShoe(shoe: Shoe) {
-        //TODO: save shoe
+
+        //add shoe to list
         _shoeList.value?.add(shoe)
 
         for (shoe in shoeList.value!!) {

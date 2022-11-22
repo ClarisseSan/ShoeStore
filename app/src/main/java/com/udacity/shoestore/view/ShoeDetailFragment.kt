@@ -38,10 +38,6 @@ class ShoeDetailFragment : Fragment() {
         // Inflate view and obtain an instance of the binding class
         _binding = FragmentShoeDetailBinding.inflate(inflater, container, false)
 
-        // Get the viewmodel
-        //viewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
-
-
         // Set the viewmodel for databinding - this allows the bound layout access to all of the data in the VieWModel
         binding.shoeViewModel = viewModel
 
@@ -62,7 +58,6 @@ class ShoeDetailFragment : Fragment() {
         var description: TextView = binding.descriptionText
 
         saveButton.setOnClickListener {
-            //TODO save shoe in LiveData
             viewModel.saveShoe(
                 Shoe(
                     shoeNameText.text.toString(),

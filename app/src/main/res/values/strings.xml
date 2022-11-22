@@ -33,4 +33,9 @@
     <string name="description">Description</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
+    <string name="instructions">Instructions</string>
+    <string name="instruction_desc">More productivity. More power. Unlock productivity for your whole team. Try our most-loved features, free for 14 days</string>
+    <string name="go_to_list">Go to shoe list</string>
+    <string name="add_shoe">Add Shoe</string>
+    <string name="go_to_instruction">Go to instructions</string>
 </resources>

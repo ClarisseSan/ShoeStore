@@ -1,41 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".InstructionFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-<TextView
-    android:id="@+id/instruction_label"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Instructions"
-    app:layout_constraintBottom_toTopOf="@+id/instruction_text_label"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/instruction_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/instructions"
+        app:layout_constraintBottom_toTopOf="@+id/instruction_text_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-<TextView
-    android:id="@+id/instruction_text_label"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="More productivity. More power. Unlock productivity for your whole team. Try our most-loved features, free for 14 days"
-    app:layout_constraintBottom_toTopOf="@+id/instruction_button"
-    app:layout_constraintEnd_toEndOf="parent"
-    android:padding="16dp"
-    app:layout_constraintHorizontal_bias="0.5"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/instruction_label" />
+    <TextView
+        android:id="@+id/instruction_text_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/instruction_desc"
+        app:layout_constraintBottom_toTopOf="@+id/instruction_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instruction_label" />
 
-<Button
-    android:id="@+id/instruction_button"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Go to shoe list"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.5"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/instruction_text_label" />
+    <Button
+        android:id="@+id/instruction_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/go_to_list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instruction_text_label" />
 </androidx.constraintlayout.widget.ConstraintLayout>
