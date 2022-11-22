@@ -1,6 +1,7 @@
 package com.udacity.shoestore.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -52,6 +53,7 @@ class ShoeListFragment : Fragment() {
             for (shoe in viewModel.shoeList.value!!) {
                 val itemBinding = FragmentShoeObjectBinding.inflate(layoutInflater)
                 itemBinding.shoeItem = shoe
+                Log.i("Observer",shoe.name)
                 binding.listLayout.addView(itemBinding.root)
             }
 

@@ -7,8 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.Observer
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.udacity.shoestore.R
@@ -29,7 +28,7 @@ class ShoeDetailFragment : Fragment() {
         fun newInstance() = ShoeDetailFragment()
     }
 
-    private lateinit var viewModel: ShoeViewModel
+    private val viewModel: ShoeViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,7 +39,7 @@ class ShoeDetailFragment : Fragment() {
         _binding = FragmentShoeDetailBinding.inflate(inflater, container, false)
 
         // Get the viewmodel
-        viewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
+        //viewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
 
 
         // Set the viewmodel for databinding - this allows the bound layout access to all of the data in the VieWModel

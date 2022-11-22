@@ -46,14 +46,14 @@ Open the starter project in Android Studio
 
 8. Create a class that extends ViewModel ---------------- TODO
 
-   *  Use a LiveData field that returns the list of shoes
+   *  Use a LiveData field that returns the list of shoes - DONE
 
 9. Create a new Shoe List destination that includes:
 
    * A new layout - DONE
    * A ScrollView - DONE
    * A LinearLayout for Shoe Items - DONE
-   * A FloatingActionButton with an action to navigate to the shoe detail screen
+   * A FloatingActionButton with an action to navigate to the shoe detail screen - DONE
 
 10. In MainActivity, setup the nav controller with the toolbar and an AppBarConfiguration.
 
@@ -72,7 +72,7 @@ Open the starter project in Android Studio
 
 13. In the Shoe List screen: ---------------- TODO 
 
-    * Use an Activity level ViewModel to hold a list of Shoes (use by activityViewModels)
-    * Observe the shoes variable from the ViewModel
-    * Use DataBindingUtil to inflate the shoe_list layout
+    * Use an Activity level ViewModel to hold a list of Shoes (use by activityViewModels) - DONE
+    * Observe the shoes variable from the ViewModel - DONE
+    * Use DataBindingUtil to inflate the shoe_list layout - DONE
     * Add a new layout item into the scrollview for each shoe - DONE
