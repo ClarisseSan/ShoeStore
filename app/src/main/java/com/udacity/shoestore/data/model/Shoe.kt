@@ -1,6 +1,8 @@
 package com.udacity.shoestore.data.model
 
 import android.os.Parcelable
+import androidx.databinding.BaseObservable
+import androidx.databinding.Bindable
 import kotlinx.android.parcel.Parcelize
 
 //@Parcelize

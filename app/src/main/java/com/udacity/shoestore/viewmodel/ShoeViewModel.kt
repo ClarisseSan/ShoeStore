@@ -38,14 +38,8 @@ class ShoeViewModel : ViewModel() {
     val shoeList: LiveData<MutableList<Shoe>>
         get() = _shoeList
 
-    // save state of the Shoe
-    private var _saveState = MutableLiveData<Boolean>()
-    val saveState: LiveData<Boolean>
-        get() = _saveState
-
     init {
         getShoesList()
-        _saveState.value = false
 
         for (shoe in shoeList.value!!) {
             Log.i("init", shoe.name)
@@ -70,12 +64,12 @@ class ShoeViewModel : ViewModel() {
         for (shoe in shoeList.value!!) {
             Log.i("saveShoe", shoe.name)
         }
-        _saveState.value = true
 
     }
 
-    fun onEventSaveComplete() {
-        _saveState.value = false
+    fun getSize(size: String): Double {
+        val doubleSize: Double = size.toDoubleOrNull() ?: return 0.0
+        return doubleSize
     }
 
 
