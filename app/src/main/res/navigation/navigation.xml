@@ -49,7 +49,9 @@
         tools:layout="@layout/fragment_shoe_detail" >
         <action
             android:id="@+id/action_shoeDetailFragment_to_shoeList"
-            app:destination="@id/shoeList" />
+            app:destination="@id/shoeList"
+            app:popUpTo="@id/shoeList"
+            app:popUpToInclusive="true" />
     </fragment>
     <action
         android:id="@+id/action_global_shoeList"

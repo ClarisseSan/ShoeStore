@@ -4,10 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentWelcomeBinding
 
 /**
@@ -15,9 +13,6 @@ import com.udacity.shoestore.databinding.FragmentWelcomeBinding
  * status bar and navigation/system bar) with user interaction.
  */
 class WelcomeFragment : Fragment() {
-
-
-    private var dummyButton: Button? = null
 
     private var _binding: FragmentWelcomeBinding? = null
 
@@ -39,9 +34,9 @@ class WelcomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        dummyButton = binding.dummyButton
-        dummyButton?.setOnClickListener {
-            view.findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToInstructionFragment2())
+        binding.dummyButton.setOnClickListener {
+            view.findNavController()
+                .navigate(WelcomeFragmentDirections.actionWelcomeFragmentToInstructionFragment2())
         }
     }
 
