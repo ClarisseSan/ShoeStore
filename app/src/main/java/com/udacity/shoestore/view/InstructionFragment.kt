@@ -52,7 +52,7 @@ class InstructionFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val instructionButton = binding.instructionButton
         instructionButton.setOnClickListener {
-            view.findNavController().navigate(R.id.action_instructionFragment_to_shoeList)
+            view.findNavController().navigate(InstructionFragmentDirections.actionInstructionFragmentToShoeList())
         }
 
     }

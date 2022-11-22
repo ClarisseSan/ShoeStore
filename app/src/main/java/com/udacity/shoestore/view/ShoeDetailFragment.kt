@@ -68,13 +68,13 @@ class ShoeDetailFragment : Fragment() {
             )
 
             //go back to Shoe List
-            view.findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeList)
+            view.findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeList())
         }
 
 
 
         cancelButton.setOnClickListener {
-            view.findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeList)
+            view.findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeList())
         }
     }
 

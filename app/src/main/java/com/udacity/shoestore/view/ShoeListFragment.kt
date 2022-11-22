@@ -64,7 +64,7 @@ class ShoeListFragment : Fragment() {
 
         //Add floating action button
         binding.fab.setOnClickListener {
-            requireView().findNavController().navigate(R.id.action_shoeList_to_shoeDetailFragment)
+            view?.findNavController()?.navigate(ShoeListFragmentDirections.actionShoeListToShoeDetailFragment())
         }
 
 

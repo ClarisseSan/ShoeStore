@@ -41,7 +41,7 @@ class WelcomeFragment : Fragment() {
 
         dummyButton = binding.dummyButton
         dummyButton?.setOnClickListener {
-            view.findNavController().navigate(R.id.action_welcomeFragment_to_instructionFragment2)
+            view.findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToInstructionFragment2())
         }
     }
 
