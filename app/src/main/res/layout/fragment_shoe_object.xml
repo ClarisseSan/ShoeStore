@@ -16,6 +16,8 @@
         android:layout_margin="16dp"
         card_view:cardCornerRadius="4dp">
 
+        <!--For a simple layout like this, I'll use Linear layout-->
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
