@@ -42,7 +42,7 @@ class ShoeViewModel : ViewModel() {
         getShoesList()
 
         for (shoe in shoeList.value!!) {
-            Log.i("init", shoe.name)
+            //Log.i("init", shoe.name)
         }
     }
 
@@ -62,7 +62,7 @@ class ShoeViewModel : ViewModel() {
         _shoeList.value?.add(shoe)
 
         for (shoe in shoeList.value!!) {
-            Log.i("saveShoe", shoe.name)
+            //Log.i("saveShoe", shoe.name)
         }
 
     }

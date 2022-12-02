@@ -12,6 +12,10 @@
             type="com.udacity.shoestore.data.model.Shoe" />
     </data>
 
+    <!--    Two way data binding-->
+    <!--    The @={} notation, which importantly includes the "=" sign, receives data
+            changes to the property and listen to user updates at the same time.-->
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,17 +26,16 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/shoe_name"
-            />
+            android:text="@string/shoe_name" />
 
         <EditText
             android:id="@+id/shoename_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/shoe_name"
-            android:text="@{shoeItem.name}"
             android:inputType="text"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:text="@={shoeItem.name}" />
 
         <TextView
             android:layout_width="match_parent"
@@ -45,8 +48,8 @@
             android:layout_height="wrap_content"
             android:hint="@string/company"
             android:inputType="text"
-            android:text="@{shoeItem.company}"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:text="@={shoeItem.company}" />
 
         <TextView
             android:layout_width="match_parent"
@@ -58,6 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/shoe_size"
+            android:text="@={shoeItem.size}"
             android:inputType="text"
             android:minHeight="48dp" />
 
@@ -72,8 +76,8 @@
             android:layout_height="wrap_content"
             android:hint="@string/description"
             android:inputType="text"
-            android:text="@{shoeItem.description}"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:text="@={shoeItem.description}" />
 
         <LinearLayout
             android:layout_width="wrap_content"

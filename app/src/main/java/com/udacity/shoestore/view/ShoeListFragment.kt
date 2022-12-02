@@ -42,8 +42,8 @@ class ShoeListFragment : Fragment() {
             for (shoe in viewModel.shoeList.value!!) {
                 val itemBinding = FragmentShoeObjectBinding.inflate(layoutInflater)
                 itemBinding.shoeItem = shoe
-                itemBinding.shoesizeText.text = shoe.size.toString()
-                Timber.tag("Observer").i(shoe.name)
+//                itemBinding.shoesizeText.text = shoe.size.toString()
+//                Timber.tag("Observer").i(shoe.name)
                 binding.listLayout.addView(itemBinding.root)
             }
 

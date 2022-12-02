@@ -27,8 +27,8 @@
                 android:id="@+id/shoename_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{shoeItem.name}"
                 android:hint="@string/shoe_name"
+                android:text="@{shoeItem.name}"
                 android:textAppearance="?attr/textAppearanceListItem" />
 
             <TextView
@@ -45,14 +45,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="@string/shoe_size"
+                android:text="@={shoeItem.size}"
                 android:textAppearance="?attr/textAppearanceListItem" />
 
             <TextView
                 android:id="@+id/shoedescription_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{shoeItem.description}"
                 android:hint="@string/description"
+                android:text="@{shoeItem.description}"
                 android:textAppearance="?attr/textAppearanceListItem" />
 
 
