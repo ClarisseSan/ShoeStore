@@ -32,7 +32,7 @@ class ShoeDetailFragment : Fragment() {
         _binding = FragmentShoeDetailBinding.inflate(inflater, container, false)
 
         // Set the viewmodel for databinding - this allows the bound layout access to all of the data in the VieWModel
-        binding.shoeViewModel = viewModel
+        //binding.shoeViewModel = viewModel
 
         // Specify the current activity as the lifecycle owner of the binding. This is used so that the binding can observe LiveData updates
         binding.setLifecycleOwner(this)
